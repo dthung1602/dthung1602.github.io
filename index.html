@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <style>
+        :root {
+            --color-background: #fffefe;
+            --color-dark: #0b1838;
+            --color-primary: #275854;
+            --color-secondary: #76a659;
+            --color-highlight-1: #f2d949;
+            --color-highlight-2: #e99745;
+        }
+
+        body {
+            background: var(--color-background);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        header {
+            text-align: center;
+            padding-top: 1.5rem;
+        }
+
+        header p {
+            font-weight: lighter;
+        }
+
+        .button-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .button {
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+
+            border-radius: 0.5rem;
+            border: 1px solid var(--color-dark);
+            padding: 0.5rem 1rem;
+            width: 90px;
+
+            transition: all 150ms ease-in;
+        }
+
+        .button img {
+            transition: all 150ms ease-in;
+        }
+
+        .button:hover {
+            border-color: transparent;
+            background: var(--color-primary);
+            color: var(--color-background);
+        }
+
+        .button:hover img {
+            /* https://codepen.io/sosuke/pen/Pjoqqp */
+            filter: invert(87%) sepia(1%) saturate(1511%) hue-rotate(314deg) brightness(99%) contrast(136%);
+        }
+
+        .button img {
+            height: 1.5rem;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            padding: 3rem 2rem;
+        }
+
+        @media only screen and (max-width: 888px) {
+            main {
+                padding: 3rem 5rem;
+            }
+        }
+
+        @media only screen and (max-width: 650px) {
+            main {
+                padding: 2rem 2rem;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            main {
+                padding: 1rem 1rem;
+            }
+            .button-group {
+                gap: 1rem;
+            }
+            .button {
+                width: unset;
+            }
+        }
+
+        .projects {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            max-width: 1200px;
+        }
+
+        .projects > a {
+            flex-basis: 400px;
+            flex-grow: 1;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 0.5rem;
+            border: 2px solid transparent;
+            overflow: hidden;
+
+            transition: all 200ms ease-in;
+        }
+
+        .projects > a img {
+            width: 100%;
+            transition: all 200ms ease-in;
+        }
+
+        .projects > a:hover {
+            transform: scale(101%);
+            box-shadow: 3px 5px 27px -10px rgba(0,0,0,0.3);
+        }
+
+        .projects > a:hover img {
+            transform: scale(102%);
+        }
+
+    </style>
+</head>
+
+<body>
+<header>
+    <h1>Hey, I'm Hung</h1>
+    <p>Welcome to my conner on the Internet!</p>
+    <div class="button-group">
+        <a target="_blank" class="button" href="https://github.com/dthung1602">
+            <img src="img/icon-github.svg" /> Github
+        </a>
+        <a target="_blank" class="button" href="https://www.linkedin.com/in/duong-thanh-hung/">
+            <img src="img/icon-linkedin.svg" /> Linkedin
+        </a>
+        <a target="_blank" class="button" href="mailto:dthung1602@gmail.com">
+            <img src="img/icon-email.svg" /> Email
+        </a>
+    </div>
+</header>
+<main>
+    <div class="projects">
+    </div>
+</main>
+
+<script>
+    const sites = [
+        {
+            name: "sqss",
+            link: "https://dthung1602.github.io/sqss/",
+            border: "#f73d93",
+            background: "#23054d",
+            padding: '1rem',
+        },
+        {
+            name: "manga-bookmark",
+            link: "https://manga--bookmark.appspot.com/",
+            border: "#00bea6",
+            background: "#001529",
+            padding: '1rem',
+        },
+        {
+            name: "bert",
+            link: "https://www.kaggle.com/code/duongthanhhung/bert-relation-extraction/notebook",
+            border: "#ff8800",
+            background: "#fef45f",
+            padding: '1rem',
+        },
+        {
+            name: "the-spamminator",
+            link: "https://chrome.google.com/webstore/detail/thespamminator/dnpihknfmkmoldifndaajhcceejniabd",
+            border: "#273877",
+            background: "#fbfbf5",
+            padding: '1rem',
+        },
+        {
+            name: "pyobfusinator",
+            link: "https://dthung1602.github.io/pyobfusinator/",
+            border: "#33c3f0",
+            background: "#fff"
+        },
+        {
+            name: "instant-proxy",
+            link: "https://registry.terraform.io/providers/dthung1602/instant-proxy/latest",
+            border: "#8fcc00",
+            background: "#5c4ee5"
+        },
+        {
+            name: "image2css",
+            link: "https://dthung1602.github.io/image2css/",
+            border: "#cbaf82",
+            background: "#20120a",
+        },
+        {
+            name: "wikipediagraphviz",
+            link: "https://github.com/dthung1602/WikipediaGraphViz",
+            border: "#000",
+            background: "#fafafa"
+        },
+    ];
+    let projectStrings = ""
+    for (const {name, link, border, background, padding = '0px'} of sites) {
+        const imgSrc = name === "" ? "https://placehold.co/400x200" : `/img/${name}.png`
+        projectStrings += `
+            <a
+                href="${link}"
+                style="background: ${background}; border-color: ${border}; padding: ${padding}"
+            >
+                <img alt="${name}" src="${imgSrc}"/>
+            </a>
+        `;
+    }
+    const projectContainer = document.getElementsByClassName("projects")[0];
+    projectContainer.innerHTML = projectStrings;
+</script>
+
+</body>
+
+</html>
